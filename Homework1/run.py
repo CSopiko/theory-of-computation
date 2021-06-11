@@ -17,13 +17,13 @@ class InputParser:
         self.set_accept_states()
         self.set_transition_table()
 
-    def set_expression(self, standard_exp=None):
+    def set_expression(self, standard_exp: str = None):
         if standard_exp is None:
             self.expression = self.text_file.readline()
         else:
             self.expression = standard_exp
 
-    def set_parameters(self, standard_parameters=None):
+    def set_parameters(self, standard_parameters: str = None):
         if standard_parameters is None:
             self.n, self.a, self.t = self.text_file.readline().split(" ")
         else:
@@ -32,14 +32,14 @@ class InputParser:
         self.a = int(self.a)
         self.t = int(self.t)
 
-    def set_accept_states(self, states_line=None):
+    def set_accept_states(self, states_line: str = None):
         if states_line is None:
             line = self.text_file.readline().split(" ")
         else:
             line = states_line.split(" ")
         self.accept_states = [int(state) for state in line]
 
-    def set_transition_table(self, transition_line=None, state_index=0):
+    def set_transition_table(self, transition_line: str = None, state_index: int = 0):
         if transition_line is None:
             state_index = 0
             for line in self.text_file:
