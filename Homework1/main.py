@@ -1,21 +1,6 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import os
 
 from run import InputParser, Automata
-
-
-def test_problem1():
-    curr_path = os.getcwd()
-    os.chdir(curr_path + '/P1/In')
-    test_input_list = os.listdir()
-    for test_input in test_input_list:
-        if test_input.startswith("in"):
-            test_input_file = open(test_input, 'r')
-            input_parser = InputParser(test_input_file)
-            regex = input_parser.get_expression().split('\n')[0]
 
 
 def test_problem2():
