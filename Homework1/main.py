@@ -16,7 +16,10 @@ def test_problem2():
     # Prepare input files
     os.chdir(curr_path + '/P2/In')
     test_input_list = os.listdir()
+    test_num = 0
+    passed = 0
     for test_input in test_input_list:
+        test_num += 1
         if test_input.startswith("in"):
             test_input_file = open(test_input, 'r')
             input_parser = InputParser(test_input_file)
@@ -33,10 +36,12 @@ def test_problem2():
             print("TEST_INPUT:" + test_output_result_set[file_name_result])
             print("RESULT_SET:" + res)
             if test_output_result_set[file_name_result] == res:
+                passed += 1
                 print(test_input + ': ++++++++++PASS++++++++++')
             else:
                 print(test_input + ': ++++++++++FAIL++++++++++')
             test_input_file.close()
+    print("Test results: ", str(passed), " out of ", str(test_num))
 
 
 def read_input_for_problem2():
