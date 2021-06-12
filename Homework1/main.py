@@ -50,7 +50,11 @@ def read_input_for_problem2():
         if not expression:
             break
         parameters = input("Enter n a t: ")
+        if not parameters:
+            break
         accept_states = input("Enter accept states: ")
+        if not accept_states:
+            break
         input_parser = InputParser()
         input_parser.set_expression(expression)
         input_parser.set_parameters(parameters)
@@ -71,14 +75,15 @@ def read_input_for_problem2():
         print("Result is: ", res)
 
 
-def run_test():
+def run_tests():
     curr_path = os.getcwd()
     os.chdir(curr_path + '/Public_tests')
     test_problem2()
+    print()
     read_input_for_problem2()
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    run_test()
+    run_tests()
 
