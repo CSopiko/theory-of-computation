@@ -12,13 +12,14 @@ The Last index shows if machine accepts whole string.
 **first line** - expression \
 **second line** - space separated parameters, **n** - number of states, **a** - number of accept states, **t** - number of transition pairs. \
 **third line** - space separated state indexes \
-followed by **n** lines of transition function definition, first integer represents how many pairs of transactions are followed. i-th line denotes i-th state.
+followed by **n** lines of transition function definition, first integer represents how many pairs of transactions are followed. i-th line denotes i-th state. \
 ```
 expression
 n a t
 accept states
 Ki symbol state
 ```
+Examples are provided.
 
 #### **USAGE**
 
