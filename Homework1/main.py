@@ -46,33 +46,31 @@ def test_problem2():
 
 def read_input_for_problem2():
     while True:
-        expression = input("Enter expression: ")
+        expression = input()
         if not expression:
             break
-        parameters = input("Enter n a t: ")
+        parameters = input()
         if not parameters:
             break
-        accept_states = input("Enter accept states: ")
+        accept_states = input()
         if not accept_states:
             break
         input_parser = InputParser()
         input_parser.set_expression(expression)
         input_parser.set_parameters(parameters)
         input_parser.set_accept_states(accept_states)
-        print("Enter transition function line by line")
-        trans_line = input()
-        state_index = 0
-        while trans_line:
-            input_parser.set_transition_table(trans_line, state_index)
+        for i in range(input_parser.get_n()):
             trans_line = input()
-            state_index += 1
+            input_parser.set_transition_table(trans_line, i)
         # simulate NFA
         nfa = Automata(input_parser.get_n(), input_parser.get_a(), input_parser.get_t(),
                        input_parser.get_expression(), input_parser.get_accept_states(),
                        input_parser.get_transaction_table())
         nfa.simulation()
         res = nfa.get_result()
-        print("Result is: ", res)
+        print(res)
+
+
 
 
 def run_tests():
