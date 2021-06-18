@@ -71,8 +71,6 @@ def read_input_for_problem2():
         print(res)
 
 
-
-
 def run_tests():
     curr_path = os.getcwd()
     os.chdir(curr_path + '/Public_tests')
